@@ -1,0 +1,40 @@
+package com.martzatech.vdhg.crmprojectback.infrastructure.apis.v1.responses;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@AllArgsConstructor
+@Getter
+@Builder
+@JsonInclude(Include.NON_EMPTY)
+public class UserResponse implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -7236791179153189384L;
+
+    private final Integer id;
+    private final String title;
+    private final String name;
+    private final String surname;
+    private final String email;
+    private final String mobile;
+    private final String address;
+    private final String nationality;
+    private final String typeUser;
+    private final CustomerResponse customer;
+    private final UserStatusResponse status;
+    private final List<RoleResponse> roles;
+    private final LocalDateTime creationTime;
+    private final LocalDateTime modificationTime;
+    private final UserResponse creationUser;
+    private final UserResponse modificationUser;
+    private final LocalDateTime lastLogin;
+}

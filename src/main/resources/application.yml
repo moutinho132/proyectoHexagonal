@@ -1,0 +1,40 @@
+app:
+  security:
+    jwt:
+      secret: bp1E1VL6y4mMMfmJO9sgkqfZA7xbPgBLS415x5FEizE=
+      issuer: martza-tech
+      ttlMillis: 3600000
+spring:
+  main:
+    allow-circular-references: true
+  profiles:
+    active: ${active_profile}
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      idle-timeout: 10000
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    open-in-view: false
+    show-sql: false
+    properties:
+      jakarta.persistence.sharedCache.mode: ENABLE_SELECTIVE
+      hibernate.format_sql: false
+  cloud:
+    azure:
+      active-directory:
+        enabled: true
+        credential:
+          client-id: 0733f9b2-c62b-43cc-8b67-a023f48002e5
+        app-id-uri: api://0733f9b2-c62b-43cc-8b67-a023f48002e5
+      storage:
+        blob:
+          account-name: martzatechstorage
+          endpoint: https://martzatechstorage.blob.core.windows.net/
+          account-key: gVFkMTle6NJ1y2TM7B9Rp4q/FU81bAkyh5F9Gm/UwKr7qYKFfbUCVPu1pPK4YE6gpgEK5seIwwHT+AStUNsEVw==
+
+logging:
+  level:
+    root: WARN
+    com.martzatech.vdhg.crmprojectback: INFO

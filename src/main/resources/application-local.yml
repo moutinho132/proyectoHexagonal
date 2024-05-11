@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/vdhg_db
+    username: dba
+    password: ${mariadb_pass_local}
+
+logging:
+  level:
+    root: WARN
+    org.springframework.security: DEBUG
+    com.martzatech.vdhg.crmprojectback: DEBUG

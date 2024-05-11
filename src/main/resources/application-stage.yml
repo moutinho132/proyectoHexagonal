@@ -1,0 +1,13 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    url: ${mariadb_connection_string}
+    username: mtdba
+    password: ${mariadb_pass_stage}
+
+logging:
+  level:
+    root: INFO
+    com.martzatech.vdhg.crmprojectback: INFO

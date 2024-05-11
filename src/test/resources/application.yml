@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active:
+      - test
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:vdhg_db;DB_CLOSE_DELAY=-1;MODE=MariaDB;NON_KEYWORDS=VALUE;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+    hikari:
+      idle-timeout: 10000
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  cloud:
+    azure:
+      storage:
+        blob:
+          account-name: martzatechstorage
+          endpoint: https://martzatechstorage.blob.core.windows.net/
+          account-key: account-key
